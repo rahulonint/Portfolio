@@ -1,0 +1,775 @@
+/* GOOGLE FONTS - MONTSERRAT */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;800&display=swap');
+
+/* ROOT VARIABLES */
+:root {
+    --color-white: #fff;
+    --color-light: #f4f4f4;
+    --color-dark: #525252;
+    --color-black: #141415;
+    --color-primary: #f24e1e;
+    --color-primary-light: hsl(14, 89%, 53%, 12%);
+    --color-success: #29f5a6;
+    --color-warning: #ffce31;
+
+    --transition: all 300ms ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: var(--color-primary-light);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary);
+}
+
+html {
+    font-size: 15px;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--color-white);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--color-dark);
+    max-width: 100vw;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--color-black);
+    line-height: 1.2;
+}
+
+h1 {
+    font-size: 3.8rem;
+}
+
+h2 {
+    font-size: 2.6rem;
+}
+
+h3 {
+    font-size: 1.6rem;
+}
+
+h4 {
+    font-size: 1.2rem;
+}
+
+h5 {
+    font-size: 0.86 rem;
+}
+
+p {
+    line-height: 1.8;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+section {
+    padding: 10rem 0 7rem;
+    max-width: 100vw;
+    overflow: hidden;
+}
+
+section h1 {
+    text-align: center;
+    display: block;
+    margin-bottom: 5rem;
+}
+
+img {
+    width: 100%;
+}
+
+.btn {
+    padding: 1.4rem 3.4rem;
+    font-size: 1.1rem;
+    color: var(--color-black);
+    background: var(--color-white);
+    display: inline-block;
+    margin: 2rem 0;
+    transition: var(--transition);
+}
+
+.btn:hover {
+    box-shadow: 0 2rem 2rem var(--color-primary-light);
+}
+
+.btn-primary {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: 0.6rem;
+}
+
+/* ########################## NAVBAR ##################### */
+nav {
+    width: 100%;
+    height: 5rem;
+    background: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    border-bottom: 1px solid var(--color-light);
+}
+
+nav.show-box-shadow {
+    box-shadow: 0 0.6rem 1rem var(--color-primary-light);
+    border: none;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+nav button {
+    display: none;
+}
+
+nav a h3 {
+    color: var(--color-primary);
+}
+
+nav .container ul {
+    display: flex;
+    height: 100%;
+}
+
+nav .container ul li a {
+    height: 100%;
+    width: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-black);
+    position: relative;
+    transition: var(--transition);
+}
+
+nav .container ul li a:hover {
+    color: var(--color-primary);
+}
+
+nav .container ul li a.active {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* #################################### LANDING SECTION ############################## */
+
+section.landing {
+    display: grid;
+    place-items: center;
+    position: relative;
+    top: 5rem;
+    padding-bottom: 14rem;
+}
+
+section.landing .container {
+    display: grid;
+    grid-template-columns: 5rem auto 26rem;
+    gap: 2rem;
+}
+
+/* #################################### SOCIALS ####################################### */
+
+section.landing .socials {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    margin-top: 5rem;
+}
+
+section.landing .socials a {
+    font-size: 1.1rem;
+    background: var(--color-light);
+    color: var(--color-dark);
+    padding: 0.3rem;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+}
+
+section.landing .socials a:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+/* ############################# INFO #################################### */
+
+section.landing .info h1 {
+    text-align: left;
+    margin: 0.2rem;
+}
+
+section.landing .info h3 {
+    color: var(--color-primary);
+}
+
+section.landing h3 {
+    margin: 2.4rem 0 1rem;
+}
+
+section.landing .info p {
+    width: 35rem;
+}
+
+section.landing .profile-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section.landing .profile-area .outer-circle {
+    width: 26rem;
+    height: 26rem;
+    border: 1px solid var(--color-primary);
+    border-radius: 50%;
+    position: relative;
+    animation: move 30s linear infinite;
+}
+
+@keyframes move {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+section.landing .profile-area .outer-circle span {
+    display: block;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    position: absolute;
+    background: var(--color-white);
+    color: var(--color-primary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 1rem var(--color-primary-light);
+}
+
+section.landing .profile-area .outer-circle span:nth-child(1) {
+    left: calc(50% - 2rem);
+    top: -2rem;
+}
+
+section.landing .profile-area .outer-circle span:nth-child(2) {
+    right: -2rem;
+    top: calc(50% - 2rem);
+}
+
+section.landing .profile-area .outer-circle span:nth-child(3) {
+    left: -2rem;
+    top: calc(50% - 2rem);
+}
+
+section.landing .profile-area .outer-circle span:nth-child(4) {
+    bottom: -2rem;
+    left: calc(50% - 2rem);
+}
+
+section.landing .profile-area .inner-circle {
+    position: absolute;
+    width: 18rem;
+    height: 18rem;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+/*####################### ABOUT SECTION ################################# */
+section.about {
+    background: var(--color-light);
+}
+
+section.about .container {
+    display: grid;
+    grid-template-columns: 26rem auto;
+    gap: 5rem;
+}
+
+section.about .container .image img {
+    border-radius: 0.6rem;
+    box-shadow: 5px 5px 5px black;
+}
+
+section.about p {
+    margin-bottom: 1rem;
+}
+
+section.about .container .read-more-content {
+    display: none;
+}
+
+/* toggle read more content using JS */
+section.about .container .read-more-content.show-content {
+    display: block;
+}
+
+section.about .container .read-more {
+    display: block;
+    margin: 1rem 0 2rem;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+section.about .container .read-more:hover {
+    text-decoration: underline;
+}
+
+section.about .info a uil-import {
+    text-align: center;
+}
+
+/* #######################  SKILL SECTION ######################### */
+section.skills .container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    place-items: center center;
+}
+
+.main-box {
+    padding: 2rem;
+    background: var(--color-primary);
+    width: 7rem;
+    height: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--color-warning);
+    transition: var(--transition);
+}
+
+.main-box .icon {
+    font-size: 3rem;
+    color: var(--color-white);
+    text-shadow: 0 0 3px var(--color-warning);
+}
+
+.main-box .text {
+    position: absolute;
+    font-size: 1rem;
+    text-align: center;
+    color: var(--color-white);
+    display: none;
+}
+
+.main-box:hover {
+    border-radius: 50%;
+    border: 1px solid orangered;
+}
+
+.main-box:hover .icon {
+    display: none;
+}
+
+.main-box:hover .text {
+    display: block;
+}
+
+/* #################################### PROJECT ################################### */
+section.recent-work {
+    background: var(--color-light);
+}
+
+section.recent-work .container {
+display: grid;
+grid-template-columns: repeat(2,1fr);
+place-items: center;
+}
+section.recent-work .container .common-box{
+    width: 20rem;
+    height: 20rem;
+    background: var(--color-white);
+    margin-bottom: 2rem;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 10px var(--color-dark);
+    display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+section.recent-work .container .common-box:hover{
+    box-shadow: 0px 0px 10px var(--color-dark);
+    cursor: pointer;
+}
+section.recent-work .container .common-box img{
+    width: 80%;
+    margin-top: 1rem;
+    border-radius: 0.6rem;
+}
+section.recent-work .container .common-box .btn{
+    padding: 0.4rem 1.4rem;
+    border-radius: 1rem;
+}
+section.recent-work .container .common-box .btn a .uil{
+    color: var(--color-white);
+}
+section.recent-work .container .common-box .btn:hover{
+    box-shadow: 0 0 5px var(--color-primary);
+    cursor: pointer;
+}
+/* #################################### Contact #################################### */
+section.contact {
+    min-width: 100vw;
+    padding: 0;
+    padding-top: 10rem;
+}
+
+section.contact .container {
+    width: 100%;
+    height: 100%;
+    padding: 7rem 8rem;
+    background: url("https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80") no-repeat center/cover;
+}
+
+section.contact .container h1,
+section.contact .container p {
+    color: var(--color-light);
+    text-shadow: 0 0 10px black;
+    text-align: center;
+}
+
+section.contact .socials {
+    display: flex;
+    gap: 1.6rem;
+    margin-top: 5rem;
+    position: absolute;
+    right: 2rem;
+}
+
+section.contact .socials a {
+    font-size: 1.1rem;
+    background: var(--color-light);
+    color: var(--color-dark);
+    padding: 0.3rem;
+    border-radius: 50%;
+    height: 2rem;
+    width: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: var(--transition);
+}
+
+section.contact .socials a:hover {
+    background: var(--color-primary);
+    color: var(--color-white);
+}
+
+section.contact form {
+    margin-top: 3rem;
+}
+
+section.contact form input,
+section.contact form textarea {
+    display: block;
+    width: 100%;
+    margin: 0.5rem 0;
+    padding: 1.6rem;
+    border: 1px solid var(--color-white);
+    border-radius: 0.4rem;
+    background: transparent;
+    color: var(--color-black);
+    transition: var(--transition);
+}
+
+section.contact form textarea {
+    height: 10rem;
+}
+
+section.contact form input:focus,
+section.contact form textarea:focus {
+    background: var(--color-white);
+    color: var(--color-black);
+}
+
+section.contact form .btn {
+    width: 14rem;
+    border: none;
+    background: var(--color-white);
+    color: var(--color-black);
+    margin: 2rem auto 0;
+}
+
+section.contact form .btn:hover {
+    background: var(--color-primary);
+    cursor: pointer;
+    color: var(--color-white);
+}
+
+section.contact .container .form-area form .submitForm {
+    display: flex;
+}
+
+/* ########################### FOOTER ##################### */
+footer .copyright {
+    background: var(--color-primary);
+    color: var(--color-white);
+    text-align: center;
+    margin-top: 5rem;
+    padding: 2rem 0;
+    font-size: 1rem;
+}
+
+footer .copyright a {
+    text-decoration: none;
+    color: var(--color-white);
+    font-size: 1rem;
+
+}
+
+/* ---------------------------------------------- MEDIA QUERIES (790px) -------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 790px){
+    section.recent-work .container{
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ---------------------------------------------- MEDIA QUERIES (700px) -------------------------------------------------------------------------------------------- */
+@media screen and (max-width: 700px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    h4 {
+        font-size: 1rem;
+    }
+
+    h5 {
+        font-size: 0.68rem;
+    }
+
+    .container {
+        width: 94%;
+    }
+
+    nav .container {
+        width: 100%;
+    }
+
+    nav .container ul {
+        position: fixed;
+        top: 0;
+        flex-direction: column;
+        z-index: 3;
+        width: 16rem;
+        height: 100vh;
+        background: var(--color-white);
+        box-shadow: 1rem 0 2rem var(--color-primary-light);
+        display: none;
+    }
+
+    nav ul li {
+        height: 4.6rem;
+        width: 100%;
+    }
+
+    nav ul li a {
+        width: 100%;
+        justify-content: start;
+        padding-left: 2rem;
+    }
+
+    nav ul li a:hover {
+        padding-left: 3rem;
+    }
+
+    nav button {
+        display: inline-block;
+        cursor: pointer;
+        background: transparent;
+        color: var(--color-black);
+        margin-right: 1rem;
+    }
+
+    nav button#close-btn {
+        display: none;
+    }
+
+    /* ################################ LANDING SECTION #################### */
+    section.landing {
+        margin-top: -4rem;
+        padding-bottom: 7rem;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+
+    section.landing .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: 20% 50%;
+        text-align: center;
+        row-gap: 6rem;
+    }
+
+    section.landing .container .socials {
+        display: none;
+    }
+
+    section.landing .container .info {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    section.landing .container .info h1 {
+        text-align: center;
+    }
+
+    section.landing .container .info p {
+        margin: 0 auto;
+        width: 92%;
+    }
+
+    section.landing .container .profile-area {
+        grid-row: 1;
+        width: 94%;
+        margin: 0 auto;
+    }
+
+    section.landing .container .outer-circle {
+        width: 16rem;
+        height: 16rem;
+    }
+
+    section.landing .container .inner-circle {
+        width: 10rem;
+        height: 10rem;
+    }
+
+    section.landing .container .outer-circle span {
+        width: 3rem;
+        height: 3rem;
+    }
+
+    section.landing .profile-area .outer-circle span:nth-child(1) {
+        left: calc(50% - 1.5rem);
+        top: -2rem;
+    }
+
+    section.landing .profile-area .outer-circle span:nth-child(2) {
+        right: -2rem;
+        top: calc(50% - 1.5rem);
+    }
+
+    section.landing .profile-area .outer-circle span:nth-child(3) {
+        left: -2rem;
+        top: calc(50% - 1.5rem);
+    }
+
+    section.landing .profile-area .outer-circle span:nth-child(4) {
+        bottom: -2rem;
+        left: calc(50% - 1.5rem);
+    }
+
+    /* ############################## ABOUT SECTION ############################### */
+    section.about .container {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    /* ############################## SKILLS SECTION ##################### */
+    section.skills .container {
+        width: 94%;
+    }
+
+    /* ############################## CONTACT SECTION ##################### */
+    section.contact .container {
+        padding: 7rem 4rem;
+    }
+
+    /* ############################## FOOTER SECTION ##################### */
+    footer.container {
+        flex-direction: column;
+        gap: 3rem;
+    }
+
+    footer.container ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 1.4rem;
+    }
+}
+
+/* ---------------------------------------------- MEDIA QUERY (540px) ---------------------------------------------- */
+@media screen and (max-width:540px) {
+
+    /* ############################## SKILLS SECTION ##################### */
+    section.skills .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+        place-items: center center;
+    }
+
+    /* ############################## CONTACT SECTION ##################### */
+    section.contact .container {
+        padding: 7rem 2rem;
+    }
+}
+
+/* ---------------------------------------------- MEDIA QUERY (402px) ---------------------------------------------- */
+@media screen and (max-width:402px) {
+
+    /* ############################## SKILLS SECTION ##################### */
+    section.skills .container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+        place-items: center center;
+    }
+}
+
+/* ---------------------------------------------- MEDIA QUERY (320px) ---------------------------------------------- */
+@media screen and (max-width:320px) {
+
+    /* ############################## CONTACT SECTION ##################### */
+    section.contact .container {
+        padding: 0.8rem 0.8rem;
+    }
+
+    section.contact .container .form-area .submitForm button {
+        width: 5rem;
+        height: 3rem;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
